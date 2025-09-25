@@ -1,0 +1,117 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Library Process" id="lib001">
+    <mxGraphModel>
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Swimlanes -->
+        <mxCell id="2" value="Độc giả" style="swimlane;childLayout=stackLayout;" vertex="1" parent="1">
+          <mxGeometry x="0" y="0" width="300" height="600" as="geometry"/>
+        </mxCell>
+        <mxCell id="3" value="NV Tiếp tân" style="swimlane;childLayout=stackLayout;" vertex="1" parent="1">
+          <mxGeometry x="300" y="0" width="300" height="600" as="geometry"/>
+        </mxCell>
+        <mxCell id="4" value="Thành viên" style="swimlane;childLayout=stackLayout;" vertex="1" parent="1">
+          <mxGeometry x="600" y="0" width="300" height="600" as="geometry"/>
+        </mxCell>
+
+        <!-- Độc giả: Vào thư viện -->
+        <mxCell id="10" value="Vào thư viện" style="rounded=1;fillColor=#dae8fc;" vertex="1" parent="2">
+          <mxGeometry x="100" y="40" width="120" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- Độc giả: Chọn tìm sách -->
+        <mxCell id="11" value="Chọn tìm sách" style="rounded=1;fillColor=#fff2cc;" vertex="1" parent="2">
+          <mxGeometry x="100" y="100" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="12" style="endArrow=block;" edge="1" parent="2" source="10" target="11">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- NV Tiếp tân: Tiếp nhận yêu cầu -->
+        <mxCell id="20" value="Tiếp nhận yêu cầu tìm sách" style="rounded=1;fillColor=#dae8fc;" vertex="1" parent="3">
+          <mxGeometry x="100" y="100" width="160" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="21" style="endArrow=block;" edge="1" parent="3" source="11" target="20">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- NV Tiếp tân: Kiểm tra thông tin sách -->
+        <mxCell id="22" value="Kiểm tra thông tin sách" style="rounded=1;fillColor=#fff2cc;" vertex="1" parent="3">
+          <mxGeometry x="100" y="160" width="160" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="23" style="endArrow=block;" edge="1" parent="3" source="20" target="22">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Quyết định: Đã là thành viên? -->
+        <mxCell id="30" value="Đã là thành viên?" style="rhombus;fillColor=#f8cecc;" vertex="1" parent="2">
+          <mxGeometry x="100" y="220" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="31" style="endArrow=block;" edge="1" parent="2" source="22" target="30">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Nhánh Yes: Thành viên mượn sách -->
+        <mxCell id="40" value="Xác nhận thông tin thành viên" style="rounded=1;fillColor=#d5e8d4;" vertex="1" parent="4">
+          <mxGeometry x="100" y="220" width="180" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="41" value="Yes" style="endArrow=block;" edge="1" parent="4" source="30" target="40">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="42" value="Mượn sách" style="rounded=1;fillColor=#d5e8d4;" vertex="1" parent="4">
+          <mxGeometry x="100" y="280" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="43" style="endArrow=block;" edge="1" parent="4" source="40" target="42">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="44" value="Rời khỏi thư viện" style="rounded=1;fillColor=#d5e8d4;" vertex="1" parent="2">
+          <mxGeometry x="100" y="340" width="140" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="45" style="endArrow=block;" edge="1" parent="2" source="42" target="44">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Nhánh No: Đăng ký thành viên -->
+        <mxCell id="50" value="Hướng dẫn đăng ký thành viên" style="rounded=1;fillColor=#fff2cc;" vertex="1" parent="3">
+          <mxGeometry x="100" y="220" width="180" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="51" value="No" style="endArrow=block;" edge="1" parent="3" source="30" target="50">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="52" value="Đăng ký thành viên" style="rounded=1;fillColor=#fff2cc;" vertex="1" parent="2">
+          <mxGeometry x="100" y="400" width="140" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="53" style="endArrow=block;" edge="1" parent="2" source="50" target="52">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="54" value="Xác nhận đăng ký" style="rounded=1;fillColor=#d5e8d4;" vertex="1" parent="4">
+          <mxGeometry x="100" y="460" width="140" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="55" style="endArrow=block;" edge="1" parent="4" source="52" target="54">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="56" value="Mượn sách" style="rounded=1;fillColor=#d5e8d4;" vertex="1" parent="4">
+          <mxGeometry x="100" y="520" width="120" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="57" style="endArrow=block;" edge="1" parent="4" source="54" target="56">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="58" value="Rời khỏi thư viện" style="rounded=1;fillColor=#d5e8d4;" vertex="1" parent="2">
+          <mxGeometry x="100" y="580" width="140" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="59" style="endArrow=block;" edge="1" parent="2" source="56" target="58">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
